@@ -161,24 +161,47 @@ const rawFiles = ref([])
 const fileAgent = ref(null)
 
 const editUser = async (values) => {
-  const fd = new FormData()
-  values.email = user.value.email
-  values.address = user.value.address
-  values.phone = user.value.phone
-  values.name = user.value.name
-  fd.append('email', values.email)
-  fd.append('address', values.address)
-  fd.append('phone', values.phone)
-  fd.append('name', values.name)
+  if (files.value.length === 0) return
+  try {
+    const fd = new FormData()
+    values.email = user.value.email
+    values.address = user.value.address
+    values.phone = user.value.phone
+    values.name = user.value.name
+    fd.append('email', values.email)
+    fd.append('address', values.address)
+    fd.append('phone', values.phone)
+    fd.append('name', values.name)
 
-  fd.append('image', files.value[0].file)
+    if (files.value.length > 0) fd.append('image', files.value[0].file)
 
-  await apiAuth.patch('/users/me', fd)
-  user.value.email = values.email
-  user.value.address = values.address
-  user.value.phone = values.phone
-  user.value.name = values.name
-  edit.value = false
+    await apiAuth.patch('/users/me', fd)
+    user.value.email = values.email
+    user.value.address = values.address
+    user.value.phone = values.phone
+    user.value.name = values.name
+    edit.value = false
+
+    createSnackbar({
+      text: '變更成功',
+      showCloseButton: false,
+      snackbarProps: {
+        timeout: 3000,
+        color: 'green',
+        location: 'bottom'
+      }
+    })
+  } catch (error) {
+    createSnackbar({
+      text: error.response.data.message,
+      showCloseButton: false,
+      snackbarProps: {
+        timeout: 3000,
+        color: 'red',
+        location: 'bottom'
+      }
+    })
+  }
 }
 
 const cancelBtn = async () => {
