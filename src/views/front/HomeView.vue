@@ -1,5 +1,6 @@
 <template>
 <section id="section01">
+  <v-container fluid="true" class="mx-0">
     <v-row>
       <v-col v-if="!isXs" cols="3">
         <span id="span-1">GOHAN</span>
@@ -9,13 +10,14 @@
       </v-col>
       <v-spacer></v-spacer>
       <v-col cols="12" sm="9">
-        <swiper class="mySwiper" :modules="modules" :autoplay="{ delay: 3000, disableOnInteraction: false }" :loop="true" style="box-shadow: 0 0 10px #514742;">
+        <swiper class="mySwiper" id="swiper1" :modules="modules" :autoplay="{ delay: 3000, disableOnInteraction: false }" :loop="true" style="box-shadow: 0 0 10px #514742;">
           <swiper-slide v-for="img in swiperImg" :key="img.src" >
             <v-img :src="img.src" aspect-ratio="1" cover></v-img>
           </swiper-slide>
         </swiper>
       </v-col>
     </v-row>
+  </v-container>
 </section>
 
 <section id="section02">
@@ -73,7 +75,7 @@
           每堂課上限 8 人。
         </p>
       </v-col>
-      <v-col cols="12" sm="5" class="text-center">
+      <v-col cols="12" sm="5" class="text-center" style="overflow: hidden;">
         <swiper
           :effect="'cards'"
           :grabCursor="true"
@@ -82,6 +84,7 @@
           :pagination= !isXs
           :navigation= !isXs
           class="mySwiper"
+          id="swiper2"
         >
         <swiper-slide v-for="img in swiperImg2" :key="img.src" >
             <v-img :src="img.src" aspect-ratio="4/3" cover></v-img>
