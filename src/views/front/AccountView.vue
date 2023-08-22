@@ -161,7 +161,6 @@ const rawFiles = ref([])
 const fileAgent = ref(null)
 
 const editUser = async (values) => {
-  if (files.value.length === 0) return
   try {
     const fd = new FormData()
     values.email = user.value.email
