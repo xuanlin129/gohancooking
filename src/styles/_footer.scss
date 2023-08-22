@@ -1,0 +1,39 @@
+#footer-view {
+  border-radius: 3rem 3rem 0 0; 
+  background: #514742;
+  .v-container {
+    padding: 50px 15px;
+    .v-col-12:first-child,
+    .v-col-12:nth-child(2) {
+      .v-img {
+        margin: auto;
+      }
+    }
+    .v-col-12:nth-child(3){
+      margin-top: 50px;
+      div:nth-child(-n+3) {
+        display: flex;
+        margin-bottom: 10px;
+        .v-icon {
+          margin-right: 1rem;
+      }
+    }
+    }
+
+    @include sm {
+      .v-row {
+        height: 240px;
+      }
+      .v-col-12:nth-child(3){
+        margin-top: 0
+      }
+    }
+
+    @include lg {
+      .v-row {
+        height: auto;
+      }
+        padding: 70px 20px 30px;
+    }
+  }
+}

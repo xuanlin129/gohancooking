@@ -1,0 +1,15 @@
+#menu {
+  #menu-img {
+    border-radius: 50px;
+  }
+  p {
+    text-align: center;
+    font-size: 12px;
+    line-height: 1.5rem;
+  }
+  @include sm {
+    p {
+    font-size: 16px;
+    }
+  }
+}

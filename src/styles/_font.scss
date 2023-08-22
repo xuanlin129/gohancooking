@@ -1,0 +1,40 @@
+@font-face {
+  font-family: 'hanzi';
+  src: url('@/assets/hanzipen-tc-regular.otf'),url('@/assets/hanzipen-tc-bold.otf');
+}
+
+@font-face {
+  font-family: 'headline';
+  src: url('@/assets/headlinea-regular.ttf');
+}
+
+@font-face {
+  font-family: 'komadori';
+  src: url('@/assets/komadori-mini.otf');
+}
+
+
+.h1-title {
+  font-size: 16px;
+  font-family: 'hanzi';
+  color: #514742;
+  @include sm {
+    font-size: 24px;
+  }
+  @include lg {
+    font-size: 32px;
+  }
+}
+
+.h1-border {
+  width: 150px;
+  height: 2px; 
+  background: #514742;
+  margin: auto;
+  @include sm {
+    width: 200px;
+  }
+  @include lg {
+    width: 300px;
+  }
+}

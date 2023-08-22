@@ -1,0 +1,78 @@
+.foodCard {
+  transition: 1s;
+  &:hover {
+    transform: scale(1.05);
+  }
+}
+#foodieView {
+  min-height: calc(100vh - 64px - 356px);
+  .v-breadcrumbs-item--disabled {
+    width: 100px;
+    opacity: 1;
+    color: #514742;
+    font-size: 18px;
+    font-weight: bolder;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+  }
+  .v-img {
+    max-width: 250px;
+  }
+  .v-text-field .v-field--active input {
+    text-align: center;
+  }
+
+  pre {
+    font-size: 14px;
+    line-height: 1.5;
+    white-space: pre-wrap;
+  }
+
+  @include sm {
+    .v-breadcrumbs-item--disabled {
+      width: auto;
+    }
+    .v-img {
+      max-width: 400px;
+    }
+    pre {
+      font-size: 16px;
+    }
+  }
+
+  @include md {
+    h2 {
+      font-size: 28px;
+    }
+    h3 {
+      font-size: 24px;
+    }
+    h4 {
+      font-size: 18px;
+    }
+    pre {
+      font-size: 18px;
+    }
+  }
+
+  @include lg {
+    .v-img {
+      max-width: 450px;
+    }
+    h2 {
+      font-size: 32px;
+    }
+    h3 {
+      font-size: 28px;
+    }
+    h4 {
+      font-size: 24px;
+    }
+    pre {
+      font-size: 20px;
+    }
+  }
+}

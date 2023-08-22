@@ -1,0 +1,54 @@
+#account {
+  min-height: calc(100vh - 64px - 358px);
+  .v-input__details{
+    display: none;
+  }
+  .v-input__control {
+    max-width: 300px;
+  }
+  #avatar {
+    position: relative;
+    .v-btn {
+      position: absolute;
+      top: 50%; 
+      left: calc(50% + 50px);
+      transform: translate(-50%, -50%);
+      font-size: 12px;
+    }
+    .v-text-field .v-field--no-label input {
+      text-align: center;
+    }
+  }
+
+  #accountInfo {
+    .v-col>div {
+      height: 44px;
+    }
+  }
+
+  #userName {
+    font-size: 24px;
+    height: 44px;
+    line-height: 44px;
+    font-weight: bolder;
+    color: #514742
+  }
+  @include sm {
+    .v-window-item:first-child {
+      padding: 50px 0;
+      .v-row {
+        height: 100%;
+      }
+    }
+  }
+  @include md {
+    .v-window-item:first-child {
+      padding: 70px 0;
+    }
+  }
+  @include xl {
+    .v-window-item:first-child {
+      padding: 100px 0;
+    }
+  }
+}

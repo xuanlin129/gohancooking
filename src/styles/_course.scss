@@ -1,0 +1,102 @@
+#course {
+  background: #918C65;
+  padding: 50px 0 0 0;
+  .v-col-12:first-child>.v-row {
+    width: 300px;
+    border-radius: 50px 50px 50px 50px;
+    background: #D9D9CF;
+    h2 {
+      letter-spacing: 8px;
+      font-size: 18px;
+      height: 70px;
+      line-height: 70px;
+    }
+    h2,
+    h3 {
+      color: #023B4F;
+    }
+    p {
+      color: #514742;
+    }
+    .v-col-12+.v-col-12 {
+      height: 150px;
+      padding: 0 35px;
+      text-align: center;
+    }
+  }
+  .v-col-12:last-child>.v-row {
+    padding: 50px 0;
+  }
+}
+
+#courseVideo {
+  background: #D9D9CF;
+  position: relative;
+  padding-bottom: 50px;
+  &::before {
+    content: '';
+    display: block;
+    width: 100vw;
+    height: 50px;
+    position: absolute;
+    border-right: 50vw solid transparent;
+    border-left: 50vw solid transparent;
+    border-bottom: 50px solid #D9D9CF;
+    top: -50px;
+  }
+  video {
+    width: 100%;
+    border-radius: 2rem;
+    padding: 15px;
+    background: url('@/assets/dot-bg.png');
+  }
+}
+
+@include sm {
+  #course {
+    .v-col-12:first-child>.v-row {
+      padding-bottom: 100px;
+      width: 250px;
+      border-radius: 50px 50px 0 0;
+    }
+    .v-col-12:last-child>.v-row {
+      padding-top: 0;
+      .vertical-lr {
+        writing-mode: vertical-lr;
+        letter-spacing: 14px;
+      }
+    }
+  }
+
+  #courseVideo {
+    &::before {
+      content: '';
+      height: 100px;
+      position: absolute;
+      border-right: 50vw solid transparent;
+      border-left: 50vw solid transparent;
+      border-bottom: 150px solid #D9D9CF;
+      top: -150px;
+    }
+    video {
+      padding: 30px;
+    }
+  }
+}
+
+@include md {
+  #course {
+    .v-col-12:first-child>.v-row {
+      width: 350px;
+      h2 {
+        font-size: 24px;
+        letter-spacing: 14px;
+        height: 70px;
+        line-height: 70px;
+      }
+      .v-col-12+.v-col-12 {
+        padding: 0 50px;
+      }
+    }
+  }
+}

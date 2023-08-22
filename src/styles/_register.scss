@@ -1,0 +1,59 @@
+#register {
+  .v-input__details {
+    display: none;
+  }
+  #register-text {
+    font-family: hanzi;
+    color: #514742;
+    font-weight: bolder;
+  }
+  .v-col-12:nth-child(2) {
+    background-color: #D9D9CF;
+  }
+
+  .v-form {
+    padding: 0 30px;
+  }
+
+  .v-form>div:nth-child(-n+4) {
+    margin-bottom: 1rem;
+  }
+
+  #register-logo {
+    margin: 40px 0;
+  }
+
+  #form-box {
+    padding: 50px;
+    .v-col-12 {
+      border-radius: 1rem;
+      background: #fff;
+    }
+  }
+
+  @include sm {
+    margin-top: 50px;
+    h1 {
+      font-size: 48px;
+    }
+    #register-text {
+      writing-mode: vertical-lr;
+    }
+    .v-col-12:nth-child(2) {
+      border-radius: 2rem 0 0 2rem;
+    }
+
+    .v-form {
+      padding: 0 50px;
+    }
+
+    #register-logo {
+      margin: 70px 0;
+    }
+    #form-box {
+      .v-col-12 {
+        border-radius: 50% 50% 1rem 1rem;
+      }
+    }
+  }
+}

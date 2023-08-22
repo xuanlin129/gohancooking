@@ -1,0 +1,20 @@
+#welcome {
+  width: 100vw;
+  height: 100vh;
+  background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('@/assets/gohancooking_shop.jpg') no-repeat center/cover;
+  .v-img {
+    flex: initial;
+    margin: auto;
+  }
+  .v-btn {
+    width: 245px;
+    height: 80px;
+    font-size: 40px;
+    font-family: 'hanzi';
+    font-weight: bold;
+    background: transparent;
+    color: white;
+    border: 3px solid #fff;
+    border-radius: 10px;
+  }
+}

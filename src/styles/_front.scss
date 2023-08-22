@@ -1,0 +1,81 @@
+.v-container {
+  @include sm {
+    width: 80%;
+    max-width: 720px;
+  }
+  @include md {
+    max-width: 900px;
+  }
+  @include lg {
+    max-width: 1200px;
+  }
+  @include xl {
+    max-width: 1320px;
+  }
+  @include xxl {
+    max-width: 1600px;
+  }
+}
+#appBar {
+  color: #fff;
+  .v-btn>.v-btn__overlay {
+    background: transparent;
+  }
+  .v-badge {
+    font-family: 'Arial';
+  }
+}
+
+.v-navigation-drawer__content {
+  color: #514742
+}
+
+.btn-primary {
+  background: #514742;
+  color: #D9D9CF;
+}
+
+.btn-hover {
+  &:hover {
+    transform: scale(1.05);
+  }
+}
+
+.btn-primary-outline {
+  color: #514742;
+  border: 1px solid #514742;
+}
+
+.grid-block-wrapper .grid-block {
+  width: 100% !important;
+}
+
+.v-toolbar .v-text-field .v-field {
+  border-radius: 30px;
+}
+
+.bg-orange {
+  color: #fff !important;
+  font-family: "Arail";
+  font-weight: bolder;
+}
+
+.bg-opgray {
+  background: rgba(0,0,0,0.5);
+  opacity: 0.5;
+}
+
+.tableLayout.v-table > .v-table__wrapper > table {
+  width: 100%;
+  border-spacing: 0;
+  table-layout: fixed;
+}
+
+.v-stepper-header {
+  background: #D9D9CE;
+}
+
+#footer {
+  color: #fff;
+  font-size: 14px;
+}

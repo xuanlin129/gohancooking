@@ -1,0 +1,21 @@
+#login {
+  background: url('@/assets/toast.png') no-repeat top center/contain;
+  margin-top: 80px;
+  max-width: 600px;
+  .v-row  {
+    max-width: 280px;
+    padding-bottom: 20px;
+  }
+  .v-input__details {
+    display: none;
+  }
+  .v-form>div {
+    margin-bottom: 1rem;
+  }
+
+  #toRegister {
+    text-decoration: underline;
+    color: #514742;
+    cursor: pointer;
+  }
+}
