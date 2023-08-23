@@ -9,7 +9,7 @@
         <v-stepper alt-labels :items="items" v-model="step" hide-actions>
           <template #[`item.1`]>
             <v-card flat title="訂單明細" class="text-center">
-              <v-table class="tableLayout">
+              <!-- <v-table class="tableLayout">
                 <thead>
                   <tr>
                     <th class="text-center">圖片</th>
@@ -43,7 +43,30 @@
                     <td colspan="6" class="text-center">沒有商品</td>
                   </tr>
                 </tbody>
-              </v-table>
+              </v-table> -->
+              <v-row v-for="item in cart" :key="item._id" :class="{ 'bg-opgray': !item.product.sell}" class="mx-auto my-2" style="width: 99%;padding: 15px 0;box-shadow: 0 0 3px #ccc;">
+                <v-col cols="4" sm="2">
+                  <v-img class="mx-auto" :src="item.product.image" cover :width="100" aspect-ratio="1"></v-img>
+                </v-col>
+                <v-col cols="8" sm="10" class="d-flex flex-column" style="position: relative;">
+                  <h4 class="text-left">{{ item.product.name }}</h4>
+                  <div class="d-flex align-center mt-auto ms-auto">
+                    <div class="d-flex align-center" style="border: 1px solid #333; padding: 5px; border-radius: 0.5rem;">
+                      <v-btn variant="text" icon="mdi-minus" @click="updateCart(item.product._id, -1)" :disabled="item.quantity === 1" style="width: 24px; height: 24px;"></v-btn>
+                      <span class="mx-3">{{ item.quantity }}</span>
+                      <v-btn variant="text" icon="mdi-plus" @click="updateCart(item.product._id, 1)" style="width: 24px; height: 24px;"></v-btn>
+                    </div>
+                    <span class="mx-2">x</span>
+                    <span> NT$ {{ item.product.price }}</span>
+                  </div>
+                  <v-btn style="position: absolute;right: 0;top: 0;" color="#ccc" variant="text" icon="mdi-delete" @click="updateCart(item.product._id, item.quantity * -1)"></v-btn>
+                </v-col>
+              </v-row>
+              <v-row v-if="cart.length === 0" style="height: 150px;">
+                <v-col cols="12" class="text-center d-flex justify-center align-center">
+                  <span style="font-size: 18px;">沒有商品</span>
+                </v-col>
+              </v-row>
               <v-divider></v-divider>
               <p class="my-2" style="font-size: 18px; font-weight: bolder;">總金額： {{ total }} 元</p>
               <!-- <v-btn class="btn-primary" @click="submit" :disabled="!canCheckout">送出訂單</v-btn> -->
@@ -84,7 +107,7 @@
           <v-stepper-actions class="d-flex" style="padding: 0 24px 16px;">
             <v-btn v-if="step === 2" class="me-auto" @click="prev">上一步</v-btn>
             <v-btn v-if="step === 1" class="ms-auto btn-primary" @click="next" :disabled="cart.length === 0">下一步</v-btn>
-            <v-btn v-else-if="step !== 3" class="ms-auto btn-primary" @click="submit" :disabled="!canCheckout">送出訂單</v-btn>
+            <v-btn v-else-if="step !== 3" class="ms-auto btn-primary" @click="submit" :disabled="!canCheckout || cartInfo">送出訂單</v-btn>
           </v-stepper-actions>
         </v-stepper>
       </v-col>
@@ -129,6 +152,10 @@ const total = computed(() => {
 
 const canCheckout = computed(() => {
   return cart.value.length > 0 && !cart.value.some(item => !item.product.sell)
+})
+
+const cartInfo = computed(() => {
+  return purchaser.value === '' || phone.value === '' || get.value === '' || (get.value === 'two' && delivery.value === '')
 })
 
 const submit = async (req, res) => {

@@ -19,7 +19,9 @@
           <tbody>
             <tr v-for="user in users" :key="user.id">
               <td>
-                <v-img :src="user.avatar" cover width="50"></v-img>
+                <div style="width: 50px; height: 50px; border-radius: 50%;overflow: hidden;">
+                  <v-img :src="user.avatar" cover width="50" aspect-ratio="1"></v-img>
+                </div>
               </td>
               <td>{{ user.account }}</td>
               <td>{{ user.name }}</td>

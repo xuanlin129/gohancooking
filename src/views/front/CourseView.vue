@@ -76,7 +76,7 @@ import FooterView from '@/components/FooterView.vue'
 
 const courseContent = [
   { title: '「 8 / 12 」 NT. 1500', products: ['► 紅燒牛肉飯', '► 五香滷味', '► 白灼時蔬'] },
-  { title: '「 8 / 19 」 NT. 1500', products: ['► 紅燒牛肉飯', '► 五香滷味', '► 白灼時蔬'] },
-  { title: '「 8 / 26 」 NT. 1500', products: ['► 紅燒牛肉飯', '► 五香滷味', '► 白灼時蔬'] }
+  { title: '「 8 / 19 」 NT. 1500', products: ['► 起司鮮蔬燉飯', '► 番茄鮮蝦濃湯', '► 方形蘋果派'] },
+  { title: '「 8 / 26 」 NT. 1500', products: ['► 鮮菇越南春捲', '► 椰香南瓜濃湯', '► 藜麥果香炊飯'] }
 ]
 </script>

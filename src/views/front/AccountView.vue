@@ -23,7 +23,9 @@
                 <v-row class="align-center">
                   <v-col cols="12" sm="6">
                     <div id="avatar" class="d-flex align-center flex-column my-2 my-sm-0">
-                      <v-img :src="user.avatar" width="120" style="border: 1px solid rgba(0, 0, 0, 0.8);border-radius: 50%;"></v-img>
+                      <div style="width: 120px;height: 120px;border: 1px solid rgba(0, 0, 0, 0.8);border-radius: 50%;overflow: hidden;">
+                        <v-img :src="user.avatar" width="120"></v-img>
+                      </div>
                       <v-btn v-if="edit" class="btn-primary" density="compact" variant="text" icon="mdi-pencil" @click="dialog=true"></v-btn>
                       <h3 class="my-4">會員名稱</h3>
                       <p id="userName" v-if="!edit">{{ user.name }}</p>

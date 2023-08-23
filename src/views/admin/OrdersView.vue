@@ -11,8 +11,7 @@
               <th>編號</th>
               <th>日期</th>
               <th>使用者</th>
-              <th>金額</th>
-              <th>商品</th>
+              <th>明細</th>
             </tr>
           </thead>
           <tbody>
@@ -20,14 +19,46 @@
               <td>{{ year(order.date) +  month(order) + date(order) + numSplice(order._id) }}</td>
               <td>{{ new Date(order.date).toLocaleString() }}</td>
               <td>{{ order.user.name }}</td>
-              <td>{{ order.total }}</td>
               <td>
-                <v-table>
-                  <tr v-for="item in order.cart" :key="item._id">
-                    <td>{{ item.product.name }}：</td>
-                    <td>{{ item.quantity }} 個</td>
-                  </tr>
-                </v-table>
+                <v-dialog
+                  transition="dialog-bottom-transition"
+                  width="500px"
+                >
+                  <template v-slot:activator="{ props }">
+                    <v-btn
+                    color="#43808F"
+                    v-bind="props"
+                    style="color: #fff"
+                    >查詢明細</v-btn>
+                  </template>
+                  <template v-slot:default="{ isActive }">
+                    <v-card>
+                      <v-toolbar
+                      color="#43808F"
+                      style="color: #fff"
+                      :title="'訂單編號：'+ year(order.date) +  month(order) + date(order) + numSplice(order._id)"
+                      ></v-toolbar>
+                      <v-card-text id="orderDialog">
+                        <h4>收件資訊</h4>
+                        <p>購買人：{{ order.purchaser }}</p>
+                        <p>聯絡電話：{{ order.phone }}</p>
+                        <p>取貨方式：{{ order.delivery }}</p>
+                        <p>訂單金額：{{ order.total }}</p>
+                        <v-divider></v-divider>
+                        <h4>商品清單</h4>
+                        <ul v-for="item in order.cart" :key="item._id">
+                          <li>{{ item.product.name }}：{{ item.quantity }} 個</li>
+                        </ul>
+                      </v-card-text>
+                      <v-card-actions class="justify-end">
+                        <v-btn
+                        variant="text"
+                        @click="isActive.value = false"
+                        >關閉</v-btn>
+                      </v-card-actions>
+                    </v-card>
+                  </template>
+                </v-dialog>
               </td>
             </tr>
           </tbody>

@@ -174,9 +174,10 @@
 
 <script setup>
 import FooterView from '@/components/FooterView.vue'
-import { computed } from 'vue'
+import { computed, onMounted } from 'vue'
 import { useDisplay } from 'vuetify'
 import { Autoplay, EffectCards, EffectFlip, Pagination, Navigation } from 'swiper/modules'
+import { gsap } from 'gsap'
 
 const { xs } = useDisplay()
 const modules = [Autoplay, EffectCards, EffectFlip, Pagination, Navigation]
@@ -203,4 +204,15 @@ const swiperImg3 = [
   { src: new URL('@/assets/swiper6-5.jpg', import.meta.url).href },
   { src: new URL('@/assets/swiper6-6.jpg', import.meta.url).href }
 ]
+
+onMounted(() => {
+  gsap.from('#section02', {
+    y: 100,
+    duration: 3
+  })
+  gsap.to('#section02', {
+    y: 0,
+    duration: 3
+  })
+})
 </script>

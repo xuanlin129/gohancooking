@@ -46,6 +46,9 @@
       padding: 70px 0;
     }
   }
+  @include lg {
+    min-height: calc(100vh - 64px - 282px);
+  }
   @include xl {
     .v-window-item:first-child {
       padding: 100px 0;
