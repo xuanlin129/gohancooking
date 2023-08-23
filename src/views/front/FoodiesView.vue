@@ -1,5 +1,5 @@
 <template>
-  <v-container style="padding-bottom: 150px;">
+  <v-container style="padding-bottom: 150px;" id="foodiesView">
     <v-row>
       <v-col cols="12" style="margin: 20px 0;">
         <h1 class="text-center h1-title mb-1">美味專區</h1>

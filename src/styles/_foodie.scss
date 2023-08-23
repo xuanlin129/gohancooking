@@ -4,6 +4,12 @@
     transform: scale(1.05);
   }
 }
+#foodiesView {
+  min-height: calc(100vh - 64px - 356px);
+  @include lg {
+    min-height: calc(100vh - 64px - 282px);
+  }
+}
 #foodieView {
   min-height: calc(100vh - 64px - 356px);
   .v-breadcrumbs-item--disabled {
