@@ -75,7 +75,7 @@
           每堂課上限 8 人。
         </p>
       </v-col>
-      <v-col cols="12" sm="5" class="text-center" style="overflow: hidden;">
+      <v-col id="swiper2" cols="12" sm="5" class="text-center">
         <swiper
           :effect="'cards'"
           :grabCursor="true"
@@ -84,7 +84,6 @@
           :pagination= !isXs
           :navigation= !isXs
           class="mySwiper"
-          id="swiper2"
         >
         <swiper-slide v-for="img in swiperImg2" :key="img.src" >
             <v-img :src="img.src" aspect-ratio="4/3" cover></v-img>

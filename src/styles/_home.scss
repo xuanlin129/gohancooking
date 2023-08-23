@@ -231,6 +231,9 @@
   padding: 50px 0 200px;
   position: relative;
   z-index: 1;
+  #swiper2 {
+    overflow: hidden;
+  }
   .under-line {
     width: 200px;
     height: 2px; 
@@ -345,6 +348,9 @@
     z-index: 1;
   }
   @include sm {
+    #swiper2 {
+      overflow: visible;
+    }
     .v-col-12:last-child {
       #egg {
         width: 250px;

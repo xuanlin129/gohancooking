@@ -5,7 +5,7 @@
         <h1 class="text-center h1-title mb-1">美味專區</h1>
         <div class="h1-border"></div>
       </v-col>
-      <v-col cols="12" sm="6" md="4" lg="3" v-for="product in products" :key="product._id" style="margin-top: 15px;">
+      <v-col cols="6" sm="6" md="4" lg="3" v-for="product in products" :key="product._id" style="margin-top: 15px;">
         <ProductCard v-bind="product"></ProductCard>
       </v-col>
     </v-row>

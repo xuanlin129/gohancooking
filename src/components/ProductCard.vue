@@ -1,6 +1,6 @@
 <template>
-<v-card :to="'/products/' + _id" class="text-center mx-auto foodCard" style="width:220px; color: #023B4F; box-shadow: none; border-radius: 0">
-  <v-img :src="image" width="240" aspect-ratio="1" cover></v-img>
+<v-card :to="'/products/' + _id" class="text-center mx-auto foodCard" style="max-width: 220px; color: #023B4F; box-shadow: none; border-radius: 0">
+  <v-img :src="image" aspect-ratio="1" cover></v-img>
   <v-card-title>{{ name }}</v-card-title>
   <v-card-text style="font-size: 18px">NT $ {{ price }}</v-card-text>
   <!-- <v-card-actions>
