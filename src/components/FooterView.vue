@@ -34,7 +34,7 @@
       </v-row>
       <p cols="12" lg="12" class="order-lg-3 mt-auto text-center">
         Copyright 2023 &copy; 泰山網頁青年專班 專題設計 by 林子軒
-        <v-btn variant="text" size="small" icon="mdi-web" target="_blank" href=""></v-btn>
+        <v-btn variant="text" size="small" icon="mdi-web" target="_blank" href="https://xuanlin129.github.io/"></v-btn>
         <v-btn variant="text" size="small" icon="mdi-instagram" target="_blank" href="https://www.instagram.com/xuan_lin129/"></v-btn>
         <v-btn variant="text" size="small" icon="mdi-github" target="_blank" href="https://github.com/xuanlin129"></v-btn>
       </p>
