@@ -6,7 +6,10 @@
         <div class="h1-border"></div>
       </v-col>
       <v-col cols="12">
-        <v-stepper alt-labels :items="items" v-model="step" hide-actions @touchstart.prevent>
+        <v-stepper alt-labels :items="items" v-model="step" hide-actions
+        style="touch-action: pan-y; /* 只允許垂直滾動，禁止水平手勢 */
+        -ms-touch-action: pan-y;
+          overscroll-behavior: contain;">
           <template #[`item.1`]>
             <v-card flat title="訂單明細" class="text-center">
               <!-- <v-table class="tableLayout">
