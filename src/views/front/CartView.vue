@@ -6,7 +6,7 @@
         <div class="h1-border"></div>
       </v-col>
       <v-col cols="12">
-        <v-stepper alt-labels :items="items" v-model="step" hide-actions>
+        <v-stepper alt-labels :items="items" v-model="step" hide-actions @touchstart.prevent>
           <template #[`item.1`]>
             <v-card flat title="訂單明細" class="text-center">
               <!-- <v-table class="tableLayout">
