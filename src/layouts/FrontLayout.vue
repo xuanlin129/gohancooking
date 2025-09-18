@@ -28,10 +28,9 @@
           </v-menu>
         </div>
         <v-btn icon title="購物車" to="/cart">
-          <v-badge v-if="cart !== 0" :content="cart.toString()" color="orange" >
+          <v-badge :content="cart.toString()" color="orange" :model-value="cart > 0" >
             <v-icon color="white">mdi-shopping</v-icon>
           </v-badge>
-          <v-icon v-if="cart === 0" color="white">mdi-shopping</v-icon>
         </v-btn>
         <v-app-bar-nav-icon v-if="isMobile" @click="drawerClick"></v-app-bar-nav-icon>
     </v-container>
